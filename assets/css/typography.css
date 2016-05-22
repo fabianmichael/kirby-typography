@@ -1,0 +1,63 @@
+/* =-=-=-=-=  NOARMALIZATION  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+
+/* Make sure that you have proper styling for subscript and superscript in
+  stylesheet, so it does not affect the line-height of the surrounding text.
+  The following defaults are taken from `Normalize.css` v.4.1.1:
+  https://github.com/necolas/normalize.css/blob/master/normalize.css
+  If you already have those rules in your stylesheet, which deal with that, feel
+  free to remove the following lines from this file. */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub { bottom: -0.25em; }
+sup { top:    -0.5em;  }
+
+
+/* =-=-=-=-=  CHARACTER STYLING  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+
+/* If you really want to use that Baskerville ampersand, no matter if it matches
+   with the other typefaces on yout page, please go ahead and uncomment the
+   following lines … */
+.char--ampersand {
+  /*
+  font-family: Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", "Warnock Pro", serif;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 1.1em;
+  line-height: 1em;
+  */
+}
+
+/* Words with all CAPITAL LETTERS */
+.char--caps {
+  letter-spacing: 0.025em;
+}
+
+/* Sequences of one or more digits */
+.char--numbers {
+  /* Add your own rules here, if you need */
+}
+
+/* Smart fractions */
+.frac--nominator   { margin-right: .05em;   }
+.frac--denominator { margin-left:  .05em;   }
+
+
+/* =-=-=-=-=  HANGING PUNCUTATION  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+
+/* Initial Quotes */
+.char--singleQuoteInitial { margin-left:   -0.4em; }
+.char--doubleQuoteInitial { margin-left:   -0.2em; }
+
+/* Double quote (") marks */
+.pull--doubleQuote { margin-left:  -0.38em; }
+.push--doubleQuote { margin-right:  0.38em; }
+
+/* Single quote (') marks */
+.pull--singleQuote { margin-left:  -0.15em; }
+.push--singleQuote { margin-right:  0.15em; }
