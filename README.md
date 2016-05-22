@@ -20,7 +20,7 @@ Current version: `1.0.0-alpha`
 
 ### Requirements
 
--	PHP 5.4.0+ with ultibyte extension (mbstring) enabled
+-	PHP 5.4.0+ with multibyte extension (mbstring) enabled
 -	Kirby 2.3.0+
 
 ### Git Submodule
