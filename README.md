@@ -79,7 +79,7 @@ l::set('typography.hyphenation.language', 'de-DE');
 | Option                    | Default value                                                                                                                                        | Description                                                    |
 |:--------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------|
 | typography                | `true`                                                                                                                                               | Set to `false` to disable plugin functionality.                |
-| typography.widget         | `true`                                                                                                                                               | Set to `false` to disable automatic parsing of your Kirbytext. |
+| typography.widget         | `true`                                                                                                                                               | Set to `false` to disable the dashboard widget. |
 | typography.ignore.tags    | `['code', 'head', 'kbd', 'object', 'option', 'pre', 'samp', 'script', 'noscript', 'noembed', 'select', 'style', 'textarea', 'title', 'var', 'math']` | Defines elements to be ignored by their tag name.              |
 | typography.ignore.classes | `['vcard', 'typography--off']`                                                                                                                       | Defines elements to be ignored by their class.                 |
 | typography.ignore.ids     | `[]`                                                                                                                                                 | Defines elements to be ignored by their ID.                    |
@@ -210,7 +210,7 @@ Kirby-Typography is released under the GNU General Public License 3.0 or later. 
 
 **Kirby-Typography** is developed and maintained by [Fabian Michael](https://fabianmichael.de).
 
-The plugin includes/is based the following third-party libraries:
+The plugin includes/is based on the following third-party libraries:
 
 -	**PHP-Typography:** Copyright 2014-2016 Peter Putzer; 2012-2013 Marie Hogebrandt; 2009-2011 KINGdesk, LLC. Released under the [GPL 2.0](http://www.gnu.org/licenses/gpl-2.0.html) or later. Large parts of this documentation have also been copied and/or adapted from the original WordPress plugin.
 -	**HTML5-PHP:** Released under the *HTML5Lib License* (see `vendors/masterminds/HTML5/LICENSE` for details and contributors)
