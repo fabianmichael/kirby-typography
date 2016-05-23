@@ -23,6 +23,16 @@ Current version: `1.0.0-alpha`
 -	PHP 5.4.0+ with multibyte extension (mbstring) enabled
 -	Kirby 2.3.0+
 
+### Kirby CLI
+
+If you’re using the [Kirby CLI](https://github.com/getkirby/cli), you need to `cd` to the root directory of your Kirby installation and run the following command:
+
+```
+kirby plugin:install fabianmichael/kirby-typography
+```
+
+This will download and copy Kirby-Typography into `site/plugins/typography`.
+
 ### Git Submodule
 
 To install this plugin as a git submodule, execute the following command from the root of your kirby project:
