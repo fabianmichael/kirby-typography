@@ -1,11 +1,12 @@
 {
   "name": "kirby-typography",
-  "version": "1.0.0-alpja",
+  "version": "1.0.0-alpha",
   "description": "This is a port of [wp-Typography](https://de.wordpress.org/plugins/wp-typography/) for Kirby CMS. Based on the `PHP_Typography` class, this plugin enhances the typography of you kirby-powered website. Think of it a more advanced alternative to the built-in `SmartyPants` parser.",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "kirby-plugin",
   "author": "Fabian Michael",
   "license": "GPL-3.0",
   "devDependencies": {
