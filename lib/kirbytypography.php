@@ -6,7 +6,7 @@ use PHP_Typography\PHP_Typography;
 class KirbyTypography extends PHP_Typography {
 
   protected $domainListUrl = 'http://data.iana.org/TLD/tlds-alpha-by-domain.txt';
-  protected $domainListCacheLifetime = 60 * 24 * 7; // one week
+  protected $domainListCacheLifetime = 10080; // one week in minutes
     
   protected $kirby;
   
