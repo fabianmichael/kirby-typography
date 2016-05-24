@@ -4,7 +4,6 @@ This is a port of [wp-Typography](https://de.wordpress.org/plugins/wp-typography
 
 Current version: `1.0.0-alpha`
 
-<<<<<<< HEAD
 ***
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -19,31 +18,13 @@ Current version: `1.0.0-alpha`
   - [Copy and Paste](#copy-and-paste)
 - [Usage](#usage)
   - [CSS and JavaScript Setup](#css-and-javascript-setup)
-=======
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-
-- [Key Features](#key-features)
-- [Download & Installation](#download-&-installation)
-  - [Requirements](#requirements)
-  - [Kirby CLI](#kirby-cli)
-  - [Git Submodule](#git-submodule)
-  - [Copy & Paste](#copy-&-paste)
-- [Usage](#usage)
-  - [CSS & JavaScript Setup](#css-&-javascript-setup)
->>>>>>> e4d202b156e443b16b6728839b3cb3889690dfef
 - [Configuration](#configuration)
   - [Localization for Multilingual Sites](#localization-for-multilingual-sites)
   - [General Options](#general-options)
   - [Smart Quotes](#smart-quotes)
   - [Smart Character Replacements](#smart-character-replacements)
   - [Smart Spacing](#smart-spacing)
-<<<<<<< HEAD
   - [Character Styling and Hanging Punctuation](#character-styling-and-hanging-punctuation)
-=======
-  - [Character Styling & Hanging Punctuation](#character-styling-&-hanging-punctuation)
->>>>>>> e4d202b156e443b16b6728839b3cb3889690dfef
   - [Hyphenation](#hyphenation)
   - [CSS Classes](#css-classes)
 - [License](#license)
@@ -51,11 +32,8 @@ Current version: `1.0.0-alpha`
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-<<<<<<< HEAD
 ***
 
-=======
->>>>>>> e4d202b156e443b16b6728839b3cb3889690dfef
 ## Key Features
 
 -	**Hyphenation:** Hyphenate text, very handy for justified text or languages with very long words, but also for English. Supports a large number of languages and offers fine-grained control over hyphenation.
