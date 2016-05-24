@@ -16,8 +16,12 @@ gulp.task( 'readme', function() {
   return gulp.src(['README.md'])
     .pipe(toc({
       mode: "github.com",
+<<<<<<< HEAD
       title: "**Table of Contents**",
       //notitle: true
+=======
+      notitle: true
+>>>>>>> e4d202b156e443b16b6728839b3cb3889690dfef
     }))
     .pipe(gulp.dest('.'));
 });
