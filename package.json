@@ -12,6 +12,7 @@
   "repository": "https://github.com/fabianmichael/kirby-typography",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-doctoc": "^0.1.4",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.5.3"
   }

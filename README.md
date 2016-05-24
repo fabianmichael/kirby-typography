@@ -4,6 +4,36 @@ This is a port of [wp-Typography](https://de.wordpress.org/plugins/wp-typography
 
 Current version: `1.0.0-alpha`
 
+***
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [Key Features](#key-features)
+- [Download and Installation](#download-and-installation)
+  - [Requirements](#requirements)
+  - [Kirby CLI](#kirby-cli)
+  - [Git Submodule](#git-submodule)
+  - [Copy and Paste](#copy-and-paste)
+- [Usage](#usage)
+  - [CSS and JavaScript Setup](#css-and-javascript-setup)
+- [Configuration](#configuration)
+  - [Localization for Multilingual Sites](#localization-for-multilingual-sites)
+  - [General Options](#general-options)
+  - [Smart Quotes](#smart-quotes)
+  - [Smart Character Replacements](#smart-character-replacements)
+  - [Smart Spacing](#smart-spacing)
+  - [Character Styling and Hanging Punctuation](#character-styling-and-hanging-punctuation)
+  - [Hyphenation](#hyphenation)
+  - [CSS Classes](#css-classes)
+- [License](#license)
+- [Credits](#credits)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+***
+
 ## Key Features
 
 -	**Hyphenation:** Hyphenate text, very handy for justified text or languages with very long words, but also for English. Supports a large number of languages and offers fine-grained control over hyphenation.
@@ -16,7 +46,7 @@ Current version: `1.0.0-alpha`
 
 … and basically every other feature of wp-Typography :-)
 
-## Download & Installation
+## Download and Installation
 
 ### Requirements
 
@@ -41,7 +71,7 @@ To install this plugin as a git submodule, execute the following command from th
 $ git submodule add https://github.com/fabianmichael/kirby-typography.git site/plugins/typography
 ```
 
-### Copy & Paste
+### Copy and Paste
 
 1. Download the contents of this repository as ZIP-file.
 2. Rename the downloaded folder to `typography` and copy it into the `site/plugins/` directory in your Kirby project.
@@ -52,7 +82,7 @@ The plugin is enabled by default and replaces the [SmartyPants](https://michelf.
 
 I tried to setup *sane* defaults, but you might have different requirements for your site. You can change any of the plugin’s settings in your `config.php` file.
 
-### CSS & JavaScript Setup
+### CSS and JavaScript Setup
 
 **CSS:** Not all features of the plugin need extra CSS rules, but for stuff like hanging punctuation, and character styling to work properly, it is recommended or even necessary to add the plugin’s CSS file to your site.
 Add `<?= css('assets/plugins/typography/css/typography.css') ?>` to your template or – even better – copy the rules to your own stylesheet. Note, that some features like hanging punctuation should be tuned in accordance to the font you have chosen.
@@ -96,40 +126,38 @@ l::set('typography.hyphenation.language', 'de-DE');
 
 ### Smart Quotes
 
-| Option                      | Default value                | Description                                                                |
-|:----------------------------|:-----------------------------|:---------------------------------------------------------------------------|
-| typography.quotes           | `true`                       | Transform straight quotes [ \' \" ] to typographically correct characters. |
-| typography.quotes.primary   | `'doubleGuillemetsReversed'` | Primary quotes style.                                                      |
-| typography.quotes.secondary | `'singleGuillemetsReversed'` | Secondary quotes style (for nested quotations).                            |
+| Option                      | Default value    | Description                                                                |
+|:----------------------------|:-----------------|:---------------------------------------------------------------------------|
+| typography.quotes           | `true`           | Transform straight quotes [ \' \" ] to typographically correct characters. |
+| typography.quotes.primary   | `'doubleCurled'` | Primary quotes style.                                                      |
+| typography.quotes.secondary | `'singleCurled'` | Secondary quotes style (for nested quotations).                            |
 
 **Available Styles for Smart Quotes:**  
 
-| Option value                              | Example                       |
-|:------------------------------------------|:------------------------------|
-| `'doubleCurled'`                          | &ldquo;foo&rdquo;             |
-| `'doubleCurledReversed'`                  | &rdquo;foo&rdquo;             |
-| `'doubleLow9'`                            | &bdquo;foo&rdquo;             |
-| `'doubleLow9Reversed'`                    | &bdquo;foo&ldquo;             |
-| `'singleCurled'`                          | &lsquo;foo&rsquo;             |
-| `'singleCurledReversed'`                  | &rsquo;foo&rsquo;             |
-| `'singleLow9'`                            | &sbquo;foo&rsquo;             |
-| `'singleLow9Reversed'`                    | &sbquo;foo&lsquo;             |
-| `'doubleGuillemetsFrench'`                | &laquo;&nbsp;foo&nbsp;&raquo; |
-| `'doubleGuillemets'`                      | &laquo;foo&raquo;             |
-| `'doubleGuillemetsReversed'` *(default)†* | &raquo;foo&laquo;             |
-| `'singleGuillemets'`                      | &lsaquo;foo&rsaquo;           |
-| `'singleGuillemetsReversed'` *(default)†* | &rsaquo;foo&lsaquo;           |
-| `'cornerBrackets'`                        | &#x300c;foo&#x300d;           |
-| `'whiteCornerBracket'`                    | &#x300e;foo&#x300f;           |
-
-†) Default style was chosen based on my personal preference. :-P
+| Option value                 | Example                       |
+|:-----------------------------|:------------------------------|
+| `'doubleCurled'` *(default)* | &ldquo;foo&rdquo;             |
+| `'doubleCurledReversed'`     | &rdquo;foo&rdquo;             |
+| `'doubleLow9'`               | &bdquo;foo&rdquo;             |
+| `'doubleLow9Reversed'`       | &bdquo;foo&ldquo;             |
+| `'singleCurled'` *(default)* | &lsquo;foo&rsquo;             |
+| `'singleCurledReversed'`     | &rsquo;foo&rsquo;             |
+| `'singleLow9'`               | &sbquo;foo&rsquo;             |
+| `'singleLow9Reversed'`       | &sbquo;foo&lsquo;             |
+| `'doubleGuillemetsFrench'`   | &laquo;&nbsp;foo&nbsp;&raquo; |
+| `'doubleGuillemets'`         | &laquo;foo&raquo;             |
+| `'doubleGuillemetsReversed'` | &raquo;foo&laquo;             |
+| `'singleGuillemets'`         | &lsaquo;foo&rsaquo;           |
+| `'singleGuillemetsReversed'` | &rsaquo;foo&lsaquo;           |
+| `'cornerBrackets'`           | &#x300c;foo&#x300d;           |
+| `'whiteCornerBracket'`       | &#x300e;foo&#x300f;           |
 
 ### Smart Character Replacements
 
 | Option                         | Default value     | Description                                                                                                                                                                                                                                                                              |
 |:-------------------------------|:------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | typography.dashes              | `true`            | Transform minus-hyphens [ \- \-\- ] to contextually appropriate dashes, minus signs, and hyphens [ &ndash; &mdash; &#8722; &#8208; ].                                                                                                                                                    |
-| typography.dashes.style        | `'international'` | Sets the style of smart dashes. Alternative value: `'traditionalUS'`.\*                                                                                                                                                                                                                  |
+| typography.dashes.style        | `'traditionalUS'` | Sets the style of smart dashes. Alternative value: `'international'`.<sup>1</sup>                                                                                                                                                                                                                 |
 | typography.dashes.spacing      | `true`            | Force thin spaces between em &amp; en dashes and adjoining words.                                                                                                                                                                                                                        |
 | typography.diacritics          | `true`            | Force diacritics where appropriate *(i.e. creme brulee becomes crème brûlée)*.                                                                                                                                                                                                           |
 | typography.diacritics.language | `en-US`           | Language for diacritic replacements. Language definitions will purposefully **not** process words that have alternate meaning without diacritics like *resume* & *résumé*, *divorce* & *divorcé*, and *expose* & *exposé*. Currently available options are only `'en-US'` and `'de-DE'`. |
@@ -138,17 +166,20 @@ l::set('typography.hyphenation.language', 'de-DE');
 | typography.marks               | `true`            | Transform registration marks [ (c) (r) (tm) (sm) (p) ] to proper characters [ © ® ™ ℠ ℗ ].                                                                                                                                                                                               |
 | typography.ordinal.suffix      | `true`            | Transform ordinal suffixes [ 1st ] to pretty ordinals [ 1<sup>st</sup> ].                                                                                                                                                                                                                |
 | typography.math                | `true`            | Transforms math symbols [ (2x6)/3=4 ] to correct symbols [ (2&#215;6)&#247;3=4 ].                                                                                                                                                                                                        |
-| typography.fractions           | `true`            | Transform fractions [ 1/2 ] to pretty fractions [ <sup>1</sup>&#8260;<sub>2</sub>. ]                                                                                                                                                                                                     |
+| typography.fractions           | `true`            | Transform fractions [ 1/2 ] to pretty fractions [ <sup>1</sup>&#8260;<sub>2</sub>.<sup>2</sup> ]                                                                                                                                                                                                     |
 | typography.exponents           | `true`            | Transform exponents [ 3\^2 ] to pretty exponents [ 3<sup>2</sup> ].                                                                                                                                                                                                                      |
 
-\*) In the US, the em dash&#8202;&mdash;&#8202;with no or very little spacing&#8202;&mdash;&#8202;is used for parenthetical expressions, while internationally, the en dash &ndash; with spaces &ndash; is more prevalent.
+<small>1) In the US, the em dash&#8202;&mdash;&#8202;with no or very little spacing&#8202;&mdash;&#8202;is used for parenthetical expressions, while internationally, the en dash &ndash; with spaces &ndash; is more prevalent.</small>
+
+<small>2) Some OpenType fonts support this feature (called [frac](https://helpx.adobe.com/de/typekit/using/open-type-syntax.html#frac)), but is has to be enabled manually via the `font-feature-settings` property in CSS. As of 2016, all major browsers support this, except for Safari (OS X & iOS) and Android WebKit. If you need this to work in all browsers, you should not rely on the OpenType feature and leave this switched on. The only exception here are monospace fonts, because using smaller digits will break the fixed-width grid, your letters are sitting on.  
+Details on browser support can be found at [The State of Web Type](http://stateofwebtype.com/#Fractions%20%28frac%29) and [Can I use](http://caniuse.com/#feat=font-feature)</small>
 
 ### Smart Spacing
 
 | Option                                 | Default value                                          | Description |
 |:---------------------------------------|:-------------------------------------------------------|:------------|
 | typography.wordspacing.singlecharacter | `true`                                                 | Enable forcing single character words to next line with the insertion of `&nbsp;` (no-break space). |
-| typography.fraction.spacing            | `true`                                                 | Inserts a no-break space into fractions to prevent wrapping [ 5&nbsp;3/4 ]. |
+| typography.fraction.spacing            | `true`                                                 | Inserts a no-break space into fractions to prevent wrapping [ 5&nbsp;<sup>1</sup>⁄<sub>2</sub> ]. |
 | typography.punctuation.spacing.french  | `false`                                                | Enable extra whitespace before certain punctuation marks, as is the French custom. |
 | typography.units.spacing               | `true`                                                 | Keep values and units together [ 12&nbsp;cm ]. |
 | typography.units.custom                | `[]`                                                   | Additional units to match (Kirby-Typography already recognizes a with a large amount of different units). |
@@ -161,9 +192,9 @@ l::set('typography.hyphenation.language', 'de-DE');
 | typography.wrap.url.minafter           | `5`                                                    | Keep at least the last `x` characters of a URL together. |
 | typography.domains.custom              | `['local', 'onion', 'exit', 'tor', 'test', 'example']` | The parser looks for domains in your content, based on a list of all valid Top-Level-Domains (updated and cached automatically once a week). Use this option to define additional domains, the parser should look for. |
 | typography.space.collapse              | `true`                                                 | Remove superfluous whitespace from your content. |
-| typography.space.nobreak.narrow        | `false`                                                | Enable to use true no-break narrow space instead of regular no-break space (`&nbsp;`). Can cause problems in some browsers. |
+| typography.space.nobreak.narrow        | `false`                                                | Enable to use true no-break narrow space ([U+202F](http://decodeunicode.org/en/u+202F)) instead of regular no-break space (`&nbsp;`). Disabled by default, because this glyph is missing in most fonts. Make sure, that your |
 
-### Character Styling & Hanging Punctuation
+### Character Styling and Hanging Punctuation
 
 The following options add `<span>` tags around certain parts of your content to create *CSS hooks*, allowing you to style specific parts of your text.
 
@@ -181,7 +212,7 @@ The following options add `<span>` tags around certain parts of your content to 
 | Option                            | Default value | Description                                                                                                                                                                  |
 |:----------------------------------|:--------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | typography.hyphenation            | `true`        | Enables hyphenation.                                                                                                                                                         |
-| typography.hyphenation.language   | `'en-US'`     | Sets the language for hyphenation rules.\*\*                                                                                                                                 |
+| typography.hyphenation.language   | `'en-US'`     | Sets the language for hyphenation rules.<sup>3</sup>                                                                                                                                 |
 | typography.hyphenation.minlength  | `5`           | Do not hyphenate words with less than `x` letters.                                                                                                                           |
 | typography.hyphenation.minbefore  | `3`           | Number of letters to keep before hyphenation.                                                                                                                                |
 | typography.hyphenation.minafter   | `2`           | Number of letters to keep after hyphenation.                                                                                                                                 |
@@ -191,7 +222,7 @@ The following options add `<span>` tags around certain parts of your content to 
 | typography.hyphenation.compounds  | `true`        | Allow hyphenation of the components of hyphenated compound words. Disable to disallow the hyphenation of the words making up a hyphenated compound *(e.g. editor-in-chief)*. |
 | typography.hyphenation.exceptions | `[]`          | Exception List (array): Mark allowed hyphenations with "-" (e.g. typo-graphy).                                                                                                                  |
 
-\*\*) Hyphenation rules are available for the following languages: `af`, `hy`, `eu`, `bg`, `ca`, `zh-Latn`, `hr`, `cs`, `da`, `nl`, `en-GB`, `en-US`, `et`, `fi`, `fr`, `gl`, `ka`, `de`, `de-1901`, `grc`, `el-Mono`, `el-Poly`, `hu`, `is`, `id`, `ia`, `ga`, `it`, `la`, `la-classic`, `lv`, `lt`, `mn-Cyrl`, `no`, `pl`, `pt`, `ro`, `ru`, `sa`, `sr-Cyrl`, `sh-Cyrl`, `sh-Latn`, `sk`, `sl`, `es`, `sv`, `th`, `tr`, `tk`, `uk`, `cy`
+<small>3) Hyphenation rules are available for the following languages: `af`, `hy`, `eu`, `bg`, `ca`, `zh-Latn`, `hr`, `cs`, `da`, `nl`, `en-GB`, `en-US`, `et`, `fi`, `fr`, `gl`, `ka`, `de`, `de-1901`, `grc`, `el-Mono`, `el-Poly`, `hu`, `is`, `id`, `ia`, `ga`, `it`, `la`, `la-classic`, `lv`, `lt`, `mn-Cyrl`, `no`, `pl`, `pt`, `ro`, `ru`, `sa`, `sr-Cyrl`, `sh-Cyrl`, `sh-Latn`, `sk`, `sl`, `es`, `sv`, `th`, `tr`, `tk`, `uk`, `cy`</small>
 
 ### CSS Classes
 

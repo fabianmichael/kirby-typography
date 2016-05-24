@@ -57,8 +57,8 @@ class Typography extends \Kirby\Component\Smartypants {
       
       // smart characters
       'typography.quotes'                      => true,
-      'typography.quotes.primary'              => 'doubleGuillemetsReversed',
-      'typography.quotes.secondary'            => 'singleGuillemetsReversed', 
+      'typography.quotes.primary'              => 'doubleCurled',
+      'typography.quotes.secondary'            => 'singleCurled', 
       
       'typography.dashes'                      => true,
       'typography.dashes.style'                => 'international', 

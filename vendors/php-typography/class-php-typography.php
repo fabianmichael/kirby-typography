@@ -242,7 +242,7 @@ class PHP_Typography {
 		$this->chr['thinSpace']               = uchr(8201);
 		$this->chr['hairSpace']               = uchr(8202);
 		$this->chr['zeroWidthSpace']          = uchr(8203);
-		$this->chr['hyphen']                  = '-';        // should be uchr(8208), but IE6 chokes;
+		$this->chr['hyphen']                  = uchr(8208); // Changed to real hyphen instead of minus by Fabian Michael, because IE6 is not alive any more
 		$this->chr['noBreakHyphen']           = uchr(8209);
 		$this->chr['enDash']                  = uchr(8211);
 		$this->chr['emDash']                  = uchr(8212);
