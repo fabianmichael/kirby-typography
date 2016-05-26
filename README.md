@@ -106,16 +106,16 @@ c::set('typography.class.ampersand', 'ch-amp'); // CSS classes are most likely s
 ```php
 # site/languages/fr.php
 l::set('typography.quotes.primary', 'doubleGuillemetsFrench'); // Quote styles are language-specific …
-l::set('typography.quotes.secondary', 'singleGuillemetsFrench');
+l::set('typography.quotes.secondary', 'doubleCurled');
 l::set('typography.hyphenation.language', 'fr'); // … and so are hyphenation rules
 
 # site/languages/de.php
-l::set('typography.quotes.primary', 'doubleLow9');
-l::set('typography.quotes.secondary', 'singleLow9');
+l::set('typography.quotes.primary', 'doubleLow9Reversed');
+l::set('typography.quotes.secondary', 'singleLow9Reversed');
 l::set('typography.hyphenation.language', 'de-DE');
 ```
 
-At the end of this document, you can find a [list of recommended settings for different languages](#recommended-settings-for-different-languages), you can use as a starting point for your own configuration.
+At the end of this document, you can find a [list of recommended settings for different languages](#5-recommended-settings-for-different-languages), you can use as a starting point for your own configuration.
 
 ### 4.2 General Options
 
@@ -251,6 +251,8 @@ Some of the options above add `<span>` tags around single characters or sequence
 ## 5 Recommended Settings for Different Languages
 
 The following recommendations are based on common typographic conventions of those languages. That does not mean, that you have to stick to them, but their make a good starting point for your own settings. Is your language missing in this list? Feel free to [create an issue](https://github.com/fabianmichael/kirby-typography/issues/new) or pull request and I will add settings for your language to the list.
+
+**Important:** If your site is multilingual, you need to define those settings in `site/languages/[language code].php`, using `l::set()` instead of `c::set`, if you want to use different settings per language.
 
 **French (France):**
 

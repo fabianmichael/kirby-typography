@@ -153,7 +153,7 @@ class Typography extends \Kirby\Component\Smartypants {
         $settings[$key] = $this->kirby->options[$key];
       }  
       $this->settingsSerialized = serialize($settings);
-    }  
+    }
     return md5($this->settingsSerialized . $text);
   }
   
