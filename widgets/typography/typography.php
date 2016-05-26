@@ -1,18 +1,23 @@
 <?php 
 
-return array(
+namespace Kirby\Plugins\Typography;
+use Tpl;
+
+$l = kirby_typography_widget_get_translations(panel()->translation()->code());
+
+return [
   'title' => [
-    'text' => 'Kirby-Typography',
+    'text' => $l['typography.widget.title'],
   ],
   
   'options' => [
     [
-      'text' => 'Flush cache',
+      'text' => $l['typography.widget.action.flush'],
       'icon' => 'trash',
-      'link' => kirby()->urls()->index() . '/plugins/typography/cache/clean'
+      'link' => kirby()->urls()->index() . '/plugins/typography/cache/clean?language=' . panel()->translation()->code()
     ],
   ],
-  'html' => function() {
-    return tpl::load(__DIR__ . DS . 'typography.html.php');
+  'html' => function() use ($l) {
+    return tpl::load(__DIR__ . DS . 'typography.html.php', [ 'l' => $l ]);
   }  
-);
+];

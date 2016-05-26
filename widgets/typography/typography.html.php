@@ -2,7 +2,7 @@
 jQuery(function($) {
 
   $.ajax({
-    url:     '<?= kirby()->urls()->index() ?>/plugins/typography/cache/status',
+    url: '<?= kirby()->urls()->index() ?>/plugins/typography/cache/status?language=<?= panel()->translation()->code() ?>',
     dataType: 'json',
     success: function(response) {
       $(".js-typography-status").html(response.message);
@@ -30,10 +30,10 @@ jQuery(function($) {
     
     $span = $("span", this);
     _textBefore = $span.html();
-    $span.html(" Flushing cache …");
+    $span.html(" <?= addslashes($l['typography.widget.action.flushing']) ?>");
     
     $.ajax({
-      url:     '<?= kirby()->urls()->index() ?>/plugins/typography/cache/flush',
+      url:     '<?= kirby()->urls()->index() ?>/plugins/typography/cache/flush?language=<?= panel()->translation()->code() ?>',
       dataType: 'json',
       success: function(response) {
         $i.attr("class", _classBefore);
@@ -56,3 +56,8 @@ jQuery(function($) {
 <div class="dashboard-box">
   <div class="js-typography-status / text">…</div>
 </div>
+<?php if (kirby()->option('typography.debug')): ?>
+  <p class="debug-warning marginalia" style="position: relative; padding-left: 24px; font-size: 14px;">
+    <span class="fa fa-exclamation-circle " style="position: absolute; top: 2px; left: 5px; font-size: 14px;"></span> <?= $l['typography.widget.notice.debug']; ?>
+  </p>
+<?php endif; ?>

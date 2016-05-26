@@ -45,6 +45,7 @@ class Typography extends \Kirby\Component\Smartypants {
   public function defaults() {
     return [
       'typography'                             => true,
+      'typography.debug'                       => false,
       
       // general attributes
       'typography.ignore.tags'                 => ['code', 'head', 'kbd', 'object',
@@ -61,10 +62,10 @@ class Typography extends \Kirby\Component\Smartypants {
       'typography.quotes.secondary'            => 'singleCurled', 
       
       'typography.dashes'                      => true,
-      'typography.dashes.style'                => 'international', 
+      'typography.dashes.style'                => 'em', 
       'typography.dashes.spacing'              => true,
       
-      'typography.diacritics'                  => true,
+      'typography.diacritics'                  => false,
       'typography.diacritics.language'         => 'en-US',
       'typography.diacritics.custom'           => [],
       
@@ -113,7 +114,7 @@ class Typography extends \Kirby\Component\Smartypants {
       // hyphenation
       'typography.hyphenation'                 => true,
       'typography.hyphenation.language'        => 'en-US',
-      'typography.hyphenation.minlength'       => 5,
+      'typography.hyphenation.minlength'       => 7,
       'typography.hyphenation.minbefore'       => 3,
       'typography.hyphenation.minafter'        => 2,
       
@@ -180,20 +181,30 @@ class Typography extends \Kirby\Component\Smartypants {
     $this->_localized = true;
   }
   
+  protected function processText($text) {
+    $typo = $this->typography();
+    return $typo->process($text);
+  }
+  
   
   public function parse($text) {
     $this->localize(); // cannot use the `configure` method to do this, because it gets executed before languages are loaded
     
-    if (!$this->kirby->options['typography']) {
+    if (!$this->kirby->option('typography')) {
       return $text;
     } else {
+      
+      if ($this->kirby->option('typography.debug')) {
+        // Skip caching when in debug mode
+        return $this->processText($text);
+      }
+      
       $cache      = Cache::instance();
       $cacheKey   = $this->hash($text);
       $parsedText = $cache->get($cacheKey, false);
       
-      if (!$parsedText) {
-        $typo = $this->typography();
-        $parsedText = $typo->process($text);
+      if ($parsedText === false) {
+        $parsedText = $this->processText($text);
         $cache->set($cacheKey, $parsedText);
       }
 

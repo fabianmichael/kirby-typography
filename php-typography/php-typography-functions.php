@@ -27,16 +27,6 @@
  *  @author Jeffrey D. King <jeff@kingdesk.com>
  *  @author Peter Putzer <github@mundschenk.at>
  *  @license http://www.gnu.org/licenses/gpl-2.0.html
- *
- *  ***
- *
- *  CHANGES applied by Fabian Michael <hallo@fabianmichael.de>:
- *
- *  The following changes have been made to this file to make inclusion into the
- *  Kirby port of wp-Typography plugin possible:
- *
- *  - The require statement to te HTML5 parser class has been removed in favour
- *    of Kirby’s classmap-based autoloading.
  */
 
 namespace PHP_Typography;
@@ -44,7 +34,7 @@ namespace PHP_Typography;
 /**
  * HTML5 element introspection
  */
-//require_once( __DIR__ . '/../vendor/Masterminds/HTML5/Elements.php' ); // @codeCoverageIgnore
+require_once( __DIR__ . '/../vendor/Masterminds/HTML5/Elements.php' ); // @codeCoverageIgnore
 
 
 /**

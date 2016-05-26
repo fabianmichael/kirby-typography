@@ -7,6 +7,11 @@ class KirbyTypography extends PHP_Typography {
 
   protected $domainListUrl = 'http://data.iana.org/TLD/tlds-alpha-by-domain.txt';
   protected $domainListCacheLifetime = 10080; // one week in minutes
+  
+  protected $dashStylesMap = [
+    'en' => 'international',
+    'em' => 'traditionalUS',
+  ];
     
   protected $kirby;
   
@@ -82,11 +87,35 @@ class KirbyTypography extends PHP_Typography {
     $this->set_hyphenation_exceptions($o['typography.hyphenation.exceptions']);
 
     $this->initialize_components();
-    $this->initialize_patterns();
-        
+    $this->initialize_patterns();        
 	}
   
-  function get_top_level_domains_from_file( $path ) {
+  /**
+   * Sets the typographical conventions used by smart_dashes.
+   *
+   * Allowed values for $style:
+   * - "em" (alias: "traditionalUS")
+   * - "en" (alias: "international")
+   *
+   * @param string $style Optional. Default "en".
+   */
+  public function set_smart_dashes_style( $style = 'en' ) {
+    if (isset($this->dashStylesMap[$style])) {
+      // Translate dash styles for PHP-Typography
+      $style = $this->dashStylesMap[$style];
+    }
+    
+    return parent::set_smart_dashes_style($style);
+  }
+  
+  /**
+	 * Try to fetch a list of top-level domains from the IANA. If fetching of that
+   * file fails, load a list of top-level domains from a file.
+	 *
+	 * @param string $path The full path and filename.
+	 * @return string A list of top-level domains concatenated with '|'.
+	 */
+  function get_top_level_domains_from_file($path) {
     
     $cache                    = Cache::instance();
     $cacheKey                 = 'domain-list-' . md5($this->domainListUrl);
@@ -120,18 +149,9 @@ class KirbyTypography extends PHP_Typography {
     }
     
     if (!$domains) {
-      // Fallback to local copy of IANA domains
-      
-      //$domains = 'ac|ad|aero|ae|af|ag|ai|al|am|an|ao|aq|arpa|ar|asia|as|at|au|aw|ax|az|ba|bb|bd|be|bf|bg|bh|biz|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|cat|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|com|coop|co|cr|cu|cv|cx|cy|cz|de|dj|dk|dm|do|dz|ec|edu|ee|eg|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gg|gh|gi|gl|gm|gn|gov|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|info|int|in|io|iq|ir|is|it|je|jm|jobs|jo|jp|ke|kg|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|me|mg|mh|mil|mk|ml|mm|mn|mobi|mo|mp|mq|mr|ms|mt|museum|mu|mv|mw|mx|my|mz|name|na|nc|net|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|org|pa|pe|pf|pg|ph|pk|pl|pm|pn|pro|pr|ps|pt|pw|py|qa|re|ro|rs|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|sk|sl|sm|sn|so|sr|st|su|sv|sy|sz|tc|td|tel|tf|tg|th|tj|tk|tl|tm|tn|to|tp|travel|tr|tt|tv|tw|tz|ua|ug|uk|um|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|yu|za|zm|zw';
       $cache->set($cacheKeyLastAttempt, $this->domainListUrl, $cacheKeyMaxFetchInterval);
-      $domains = [];
-      $domainListTextFileContents = file_get_contents(TYPOGRAPHY_PLUGIN_BASE_DIR . DS . 'vendors' . DS . 'iana' . DS . 'tlds-alpha-by-domain.txt');
-      foreach (explode("\n", $domainListTextFileContents) as $line) {
-        if ( preg_match('#^[a-zA-Z0-9][a-zA-Z0-9-]*$#', $line, $matches ) ) {
-          $domains[] = strtolower( $matches[0] );
-        }
-      }
-      $domains = implode('|', $domains);
+      // Fallback to local copy of IANA domains
+      $domains = parent::get_top_level_domains_from_file($path);
     }
     
     if (is_array($this->kirby->options['typography.domains.custom']) &&
@@ -147,7 +167,7 @@ class KirbyTypography extends PHP_Typography {
     return (!empty($str) ? ' class="' . $str . '"' : '');
   }
   
-  /* =-=-=-=-=  Overridden styling methods  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+  /* =-=-=-=-=  Overloaded styling methods  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
   
   function style_caps( \DOMText $textnode ) {
     if (empty($this->settings['styleCaps'])) return;

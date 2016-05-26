@@ -35,8 +35,6 @@
  *  The following changes have been made to this file to make inclusion into the
  *  Kirby port of wp-Typography plugin possible:
  *
- *  - The require statement to te HTML5 parser class has been removed in favour
- *    of Kirby’s classmap-based autoloading.
  *  - All `private` methods and class variables have been converted to
  *    `protected` for improving extensibility of this class.
  */
@@ -49,10 +47,11 @@ namespace PHP_Typography;
  */
 require_once __DIR__ . '/php-typography-functions.php'; // @codeCoverageIgnore
 
+
 /**
  * HTML5-PHP - a DOM-based HTML5 parser
  */
-//require_once dirname( __DIR__ ) . '/vendor/Masterminds/HTML5.php'; // @codeCoverageIgnore
+require_once dirname( __DIR__ ) . '/vendor/Masterminds/HTML5.php'; // @codeCoverageIgnore
 
 /**
  * Parses HTML5 (or plain text) and applies various typographic fixes to the text.
