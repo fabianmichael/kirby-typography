@@ -40,7 +40,7 @@ use L;
 
 class Typography extends \Kirby\Component\Smartypants {
   
-  public $version = '0.5.0';
+  public $version = '1.0.0-alpha2';
   
   public function defaults() {
     return [
