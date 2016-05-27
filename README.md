@@ -51,7 +51,7 @@ Current version: `1.0.0-alpha2`
 
 ### 2.1 Requirements
 
--	PHP 5.4.0+ with multibyte extension (mbstring) enabled
+-	PHP 5.4.0+ with multibyte extension (mbstring)
 -	Kirby 2.3.0+
 
 ### 2.2 Kirby CLI
@@ -62,7 +62,7 @@ If you’re using the [Kirby CLI](https://github.com/getkirby/cli), you need to 
 kirby plugin:install fabianmichael/kirby-typography
 ```
 
-This will download and copy Kirby-Typography into `site/plugins/typography`.
+This will download and copy *Kirby-Typography* into `site/plugins/typography`.
 
 ### 2.3 Git Submodule
 
@@ -74,8 +74,8 @@ $ git submodule add https://github.com/fabianmichael/kirby-typography.git site/p
 
 ### 2.4 Copy and Paste
 
-1. Download the contents of this repository as ZIP-file.
-2. Rename the downloaded folder to `typography` and copy it into the `site/plugins/` directory in your Kirby project.
+1. [Download](https://github.com/fabianmichael/kirby-typography/archive/master.zip) the contents of this repository as ZIP-file.
+2. Rename the extracted folder to `typography` and copy it into the `site/plugins/` directory in your Kirby project.
 
 ## 3 Usage
 
@@ -170,13 +170,12 @@ At the end of this document, you can find a [list of recommended settings for di
 | typography.marks               | `true`            | Transform registration marks [ (c) (r) (tm) (sm) (p) ] to proper characters [ © ® ™ ℠ ℗ ].                                                                                                                                                                                               |
 | typography.ordinal.suffix      | `true`            | Transform ordinal suffixes [ 1st ] to pretty ordinals [ 1<sup>st</sup> ].                                                                                                                                                                                                                |
 | typography.math                | `true`            | Transforms math symbols [ (2x6)/3=4 ] to correct symbols [ (2&#215;6)&#247;3=4 ].                                                                                                                                                                                                        |
-| typography.fractions           | `true`            | Transform fractions [ 1/2 ] to pretty fractions [ <sup>1</sup>&#8260;<sub>2</sub>.<sup>2</sup> ]                                                                                                                                                                                                     |
+| typography.fractions           | `true`            | Transform fractions [ 1/2 ] to pretty fractions [ <sup>1</sup>&#8260;<sub>2</sub> ].                                                                                                                                                                                                     |
 | typography.exponents           | `true`            | Transform exponents [ 3\^2 ] to pretty exponents [ 3<sup>2</sup> ].                                                                                                                                                                                                                      |
 
 <small>1) In the US, the em dash&#8202;&mdash;&#8202;with no or very little spacing&#8202;&mdash;&#8202;is used for parenthetical expressions, while internationally, the en dash &ndash; with spaces &ndash; is more prevalent.</small>
 
-<small>2) Some fonts support smart fractions via an OpenType  feature called [frac](https://helpx.adobe.com/de/typekit/using/open-type-syntax.html#frac)), but is has to be enabled manually via the `font-feature-settings` property in CSS. As of 2016, this is not supported by all common browsers. If you need this to work in every browser, you should not rely on the OpenType feature and leave this switched on. The only exception here are monospace fonts, because using smaller digits will break the fixed-width grid, your letters are sitting on.  
-Details on browser support for the `frac` feature can be found at [The State of Web Type](http://stateofwebtype.com/#Fractions%20%28frac%29) and [Can I use](http://caniuse.com/#feat=font-feature).</small>
+<small>2) Some fonts support smart fractions via an OpenType  feature called „[frac](https://helpx.adobe.com/de/typekit/using/open-type-syntax.html#frac)“, but is has to be enabled manually by declaring the `font-feature-settings` property in CSS. As of 2016, this is not supported by all major browsers. If you need this to work in everywhere, you should not rely on the OpenType feature and leave this setting turned on. The only exception where you really should disable this feature are monospaced fonts, because using smaller digits will break the fixed-width grid, your letters are sitting on. Details on browser support for the `frac` feature can be found at [The State of Web Type](http://stateofwebtype.com/#Fractions%20%28frac%29) and [Can I use](http://caniuse.com/#feat=font-feature).</small>
 
 ### 4.5 Smart Spacing
 
@@ -186,7 +185,7 @@ Details on browser support for the `frac` feature can be found at [The State of 
 | typography.fraction.spacing            | `true`                                                 | Inserts a no-break space into fractions to prevent wrapping [ 5&nbsp;<sup>1</sup>⁄<sub>2</sub> ]. |
 | typography.punctuation.spacing.french  | `false`                                                | Enable extra whitespace before certain punctuation marks, as is the French custom. |
 | typography.units.spacing               | `true`                                                 | Keep values and units together [ 12&nbsp;cm ]. |
-| typography.units.custom                | `[]`                                                   | Additional units to match (Kirby-Typography already recognizes a with a large amount of different units). |
+| typography.units.custom                | `[]`                                                   | Additional units to match (*Kirby-Typography* already recognizes a with a large amount of different units). |
 | typography.dewidow                     | `true`                                                 | Prevent widows. |
 | typography.dewidow.maxlength           | `5`                                                    | Only protect widows with `x` or fewer letters. |
 | typography.dewidow.maxpull             | `5`                                                    | Pull at most `x` letters from the previous line to keep the widow company. |
@@ -280,15 +279,15 @@ Note: In books, sometimes Chevrons [ »foo« ] are used as quotation marks inste
 
 ## 6 License
 
-Kirby-Typography is released under the GNU General Public License 3.0 or later. See `LICENSE` file for details (FYI: This is mandatory, because wp-Typography is also released under GPL. I would have preferred the MIT license.).
+*Kirby-Typography* is released under the GNU General Public License 3.0 or later. See `LICENSE` file for details (FYI: This is mandatory, because wp-Typography is also released under GPL. I would have preferred the MIT license.).
 
 ## 7 Credits
 
 **Kirby-Typography** is developed and maintained by [Fabian Michael](https://fabianmichael.de).
 
-The plugin includes/is based on the following third-party libraries:
+The plugin includes or is based on the following third-party libraries:
 
 -	**PHP-Typography:** Copyright 2014-2016 Peter Putzer; 2012-2013 Marie Hogebrandt; 2009-2011 KINGdesk, LLC. Released under the [GPL 2.0](http://www.gnu.org/licenses/gpl-2.0.html) or later. Large parts of this documentation have also been copied and/or adapted from the original WordPress plugin.
 -	**HTML5-PHP:** Released under the *HTML5Lib License* (see `vendors/masterminds/HTML5/LICENSE` for details and contributors)
 -	**A List of all Top-Level-Domains**, maintained by the [Internet Assigned Numbers Authority (IANA)](http://www.iana.org) (automatically updated once a week)
-- **JavaScript** (copyfix.js) based on [Hyphenator](https://github.com/mnater/Hyphenator) 5.2.0(devel). Copyright (C) 2015 by Mathias Nater. Originally released under the MIT license.
+- **JavaScript** (copyfix.js) based on [Hyphenator](https://github.com/mnater/Hyphenator) 5.2.0(devel). Copyright 2015 by Mathias Nater. Originally released under the MIT license.
