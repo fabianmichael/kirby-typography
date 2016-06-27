@@ -2,7 +2,7 @@
 
 This is a port of [wp-Typography](https://de.wordpress.org/plugins/wp-typography/) for Kirby CMS. Based on the `PHP_Typography` class, this plugin enhances the typography of you kirby-powered website. Think of it a more advanced alternative to the built-in `SmartyPants` parser.
 
-Current version: `1.0.0-alpha2`
+Current version: `1.0.0-beta1`
 
 ***
 
