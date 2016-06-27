@@ -22,15 +22,15 @@ function kirby_typography_widget_get_translations( $code = null ) {
 
 $kirby->set('widget', 'typography', __DIR__ );
 $kirby->set('route', [
-  'pattern' => 'plugins/typography/cache/(:any)',
+  'pattern' => 'plugins/typography/widget/api/(:any)',
   'action'  => function($action) {
     
-    $user = site()->user();
+    $user = site()->user()->current();
     if (!$user || !$user->isAdmin()) {
       return Response::error('Only administrators can access the widget API of the typography plugin.', 401);
     }
     
-    $l = kirby_typography_widget_get_translations($_GET['language']);
+    $l = kirby_typography_widget_get_translations($user->language());
     
     switch ($action) {
       case 'status';

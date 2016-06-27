@@ -14,7 +14,7 @@ return [
     [
       'text' => $l['typography.widget.action.flush'],
       'icon' => 'trash',
-      'link' => kirby()->urls()->index() . '/plugins/typography/cache/clean?language=' . panel()->translation()->code()
+      'link' => kirby()->urls()->index() . '/plugins/typography/widget/api/flush',
     ],
   ],
   'html' => function() use ($l) {

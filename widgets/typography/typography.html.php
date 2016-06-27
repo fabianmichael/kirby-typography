@@ -2,7 +2,7 @@
 jQuery(function($) {
 
   $.ajax({
-    url: '<?= kirby()->urls()->index() ?>/plugins/typography/cache/status?language=<?= panel()->translation()->code() ?>',
+    url: '<?= kirby()->urls()->index() ?>/plugins/typography/widget/api/status',
     dataType: 'json',
     success: function(response) {
       $(".js-typography-status").html(response.message);
@@ -33,7 +33,7 @@ jQuery(function($) {
     $span.html(" <?= addslashes($l['typography.widget.action.flushing']) ?>");
     
     $.ajax({
-      url:     '<?= kirby()->urls()->index() ?>/plugins/typography/cache/flush?language=<?= panel()->translation()->code() ?>',
+      url:     '<?= kirby()->urls()->index() ?>/plugins/typography/widget/api/flush',
       dataType: 'json',
       success: function(response) {
         $i.attr("class", _classBefore);
