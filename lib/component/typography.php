@@ -40,7 +40,7 @@ use L;
 
 class Typography extends \Kirby\Component\Smartypants {
   
-  public $version = '1.0.0-alpha2';
+  public $version = '1.0.0-beta1';
   
   public function defaults() {
     return [
@@ -128,7 +128,7 @@ class Typography extends \Kirby\Component\Smartypants {
       'typography.class.ampersand'             => 'char--ampersand', 
       'typography.class.caps'                  => 'char--caps',
       'typography.class.numbers'               => 'char--numbers',
-      'typography.class.fraction.nominator'    => 'frac--nominator',
+      'typography.class.fraction.numerator'    => 'frac--numerator',
       'typography.class.fraction.denominator'  => 'frac--denominator',
       
       'typography.class.quote.initial.single'  => 'char--singleQuoteInitial',
@@ -137,7 +137,7 @@ class Typography extends \Kirby\Component\Smartypants {
       'typography.class.push.double'           => 'push--doubleQuote',
       'typography.class.pull.single'           => 'pull--singleQuote',
       'typography.class.pull.double'           => 'pull--doubleQuote',
-      'typography.class.ordinal.suffix'        => 'char--ordinalSuffix',
+      'typography.class.ordinal'               => 'char--ordinalSuffix',
     ];
   }
   

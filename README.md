@@ -175,7 +175,7 @@ At the end of this document, you can find a [list of recommended settings for di
 
 <small>1) In the US, the em dash&#8202;&mdash;&#8202;with no or very little spacing&#8202;&mdash;&#8202;is used for parenthetical expressions, while internationally, the en dash &ndash; with spaces &ndash; is more prevalent.</small>
 
-<small>2) Some fonts support smart fractions via an OpenType  feature called „[frac](https://helpx.adobe.com/de/typekit/using/open-type-syntax.html#frac)“, but is has to be enabled manually by declaring the `font-feature-settings` property in CSS. As of 2016, this is not supported by all major browsers. If you need this to work in everywhere, you should not rely on the OpenType feature and leave this setting turned on. The only exception where you really should disable this feature are monospaced fonts, because using smaller digits will break the fixed-width grid, your letters are sitting on. Details on browser support for the `frac` feature can be found at [The State of Web Type](http://stateofwebtype.com/#Fractions%20%28frac%29) and [Can I use](http://caniuse.com/#feat=font-feature).</small>
+<small>2) Some fonts support smart fractions via an OpenType  feature called “[frac](https://helpx.adobe.com/de/typekit/using/open-type-syntax.html#frac)”, but is has to be enabled manually by declaring the `font-feature-settings` property in CSS. As of 2016, this is not supported by all major browsers. If you need this to work in everywhere, you should not rely on the OpenType feature and leave this setting turned on. The only exception where you really should disable this feature are monospaced fonts, because using smaller digits will break the fixed-width grid, your letters are sitting on. Details on browser support for the `frac` feature can be found at [The State of Web Type](http://stateofwebtype.com/#Fractions%20%28frac%29) and [Can I use](http://caniuse.com/#feat=font-feature).</small>
 
 ### 4.5 Smart Spacing
 
@@ -236,7 +236,7 @@ Some of the options above add `<span>` tags around single characters or sequence
 | typography.class.ampersand            | `'char--ampersand'`          |
 | typography.class.caps                 | `'char--caps'`               |
 | typography.class.numbers              | `'char--numbers'`            |
-| typography.class.fraction.nominator   | `'frac--nominator'`          |
+| typography.class.fraction.numerator   | `'frac--numerator'`          |
 | typography.class.fraction.denominator | `'frac--denominator'`        |
 | typography.class.quote.initial.single | `'char--singleQuoteInitial'` |
 | typography.class.quote.initial.double | `'char--doubleQuoteInitial'` |

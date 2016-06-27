@@ -1,13 +1,4 @@
 <?php
-
-/**
- * This file is used as part of wpTypography.
- *
- * Copyright (c) 2013 The Authors of HTML5-PHP
- * 
- * See HTML5/LICENSE for LICENSE terms and HTML5/CREDITS for contributors.
- */
-
 namespace Masterminds;
 
 use Masterminds\HTML5\Parser\FileInputStream;
@@ -17,8 +8,6 @@ use Masterminds\HTML5\Parser\Scanner;
 use Masterminds\HTML5\Parser\Tokenizer;
 use Masterminds\HTML5\Serializer\OutputRules;
 use Masterminds\HTML5\Serializer\Traverser;
-
-require_once ("HTML5/autoload.php");
 
 /**
  * This class offers convenience methods for parsing and serializing HTML5.

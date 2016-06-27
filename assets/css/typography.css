@@ -44,7 +44,7 @@ sup { top:    -0.5em;  }
 }
 
 /* Smart fractions */
-.frac--nominator   { margin-right: .05em;   }
+.frac--numerator   { margin-right: .05em;   }
 .frac--denominator { margin-left:  .05em;   }
 
 
