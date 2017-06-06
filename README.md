@@ -112,7 +112,7 @@ l::set('typography.hyphenation.language', 'fr'); // … and so are hyphenation r
 # site/languages/de.php
 l::set('typography.quotes.primary', 'doubleLow9Reversed');
 l::set('typography.quotes.secondary', 'singleLow9Reversed');
-l::set('typography.hyphenation.language', 'de-DE');
+l::set('typography.hyphenation.language', 'de');
 ```
 
 At the end of this document, you can find a [list of recommended settings for different languages](#5-recommended-settings-for-different-languages), you can use as a starting point for your own configuration.
