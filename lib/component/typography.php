@@ -187,7 +187,7 @@ class Typography extends \Kirby\Component\Smartypants {
   }
   
   
-  public function parse($text) {
+  public function parse($text, $force = false) {
     $this->localize(); // cannot use the `configure` method to do this, because it gets executed before languages are loaded
     
     if (!$this->kirby->option('typography')) {
