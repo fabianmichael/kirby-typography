@@ -52,7 +52,7 @@ Current version: `1.0.0-beta1`
 ### 2.1 Requirements
 
 -	PHP 5.4.0+ with multibyte extension (mbstring)
--	Kirby 2.3.0+
+-	Kirby 2.3.0+ (not compatible with Kirby 3)
 
 ### 2.2 Kirby CLI
 
